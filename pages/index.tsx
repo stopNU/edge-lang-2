@@ -1,21 +1,12 @@
 import Layout from "components/Layout";
-//import ServerSideTranslations from "services/ServerSideTranslations";
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from "next";
 import React from "react";
-//import LocalizationService from "services/LocalizationService";
-import useTranslation from "next-translate/useTranslation";
 
 export const runtime = "experimental-edge";
 
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
-  //const locale = LocalizationService.getLocaleFromContext(context);
-
   return {
-    props: {
-      locale: "en",
-      __lang: "en",
-      //__namespaces: await ServerSideTranslations.getForDefault(locale, ["account"]),
-    },
+    props: {},
   };
 };
 
@@ -23,13 +14,10 @@ interface PageProps {
   locale: string;
 }
 
-const HomePage: NextPage<PageProps> = ({ locale }) => {
-  const { t } = useTranslation();
-
+const HomePage: NextPage<PageProps> = () => {
   return (
-    <Layout locale={locale}>
-      <h1>{t("header:Sports")}</h1>
-      {t("account:Account Information")}
+    <Layout locale={"en"}>
+      <h1>ad</h1>
     </Layout>
   );
 };
