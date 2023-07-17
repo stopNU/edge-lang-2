@@ -1,4 +1,3 @@
-import Layout from "components/Layout";
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from "next";
 import React from "react";
 
@@ -10,16 +9,10 @@ export const getServerSideProps: GetServerSideProps = async (context: GetServerS
   };
 };
 
-interface PageProps {
-  locale: string;
-}
+interface PageProps {}
 
 const HomePage: NextPage<PageProps> = () => {
-  return (
-    <Layout locale={"en"}>
-      <h1>ad</h1>
-    </Layout>
-  );
+  return <h1>ad</h1>;
 };
 
 export default HomePage;
